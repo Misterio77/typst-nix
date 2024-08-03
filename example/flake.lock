@@ -1,0 +1,97 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1722519197,
+        "narHash": "sha256-VEdJmVU2eLFtLqCjTYJd1J7+Go8idAcZoT11IewFiRg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "05405724efa137a0b899cce5ab4dde463b4fd30b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "systems": "systems",
+        "typst-nix": "typst-nix",
+        "typst-packages": "typst-packages"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "typst-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": "systems_2",
+        "typst-packages": [
+          "typst-packages"
+        ]
+      },
+      "locked": {
+        "lastModified": 0,
+        "narHash": "sha256-JbtjpOEvcnJ253R+ia+esTEy8hSW0NCNED1Ko11G0SU=",
+        "path": "../",
+        "type": "path"
+      },
+      "original": {
+        "path": "../",
+        "type": "path"
+      }
+    },
+    "typst-packages": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722587313,
+        "narHash": "sha256-oXcqoUItu8GhnVwAMUKvZdPseH5BiXSRflZk0bSb5bQ=",
+        "owner": "typst",
+        "repo": "packages",
+        "rev": "6c545049e1fd0f657480144499983cb0b77620a3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "typst",
+        "repo": "packages",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
