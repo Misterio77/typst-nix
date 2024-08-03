@@ -6,8 +6,7 @@
     typst-packages.url = "github:typst/packages";
     typst-packages.flake = false;
 
-    # typst-nix.url = "github:misterio77/typst-nix";
-    typst-nix.url = "path:../";
+    typst-nix.url = "github:misterio77/typst-nix";
     typst-nix.inputs.nixpkgs.follows = "nixpkgs";
     typst-nix.inputs.typst-packages.follows = "typst-packages";
   };
