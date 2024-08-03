@@ -6,7 +6,7 @@ A dead-simple function to build your typst packages, including those that requir
 
 This repo contains a `mkTypstDerivation` function. It's a simple `mkDerivation` wrapper, with a `buildPhase` that calls `typst compile`:
 
-```
+```nix
 mkTypstDerivation {
   name = "paper-im-procrastinating-on";
   # Directory containing the typst project
@@ -31,7 +31,7 @@ The function's available at `default.nix` and also exposed via flake `lib` and `
 
 Minimal example:
 
-```
+```nix
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
@@ -52,13 +52,13 @@ Minimal example:
 
 Do check [example/flake.nix](example/flake.nix) for a slightly better example.
 Also available as a nix flake template:
-```
+```bash
 nix flake init -t github:misterio77/typst-nix
 ```
 
 ### With a fetcher
 
-``` 
+``` nix
 let
   mkTypstDerivation = import (fetchTarball "https://github.com/misterio77/typst-nix") {};
 in
