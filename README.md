@@ -20,9 +20,9 @@ Besides the usual `mkDerivation` arguments, it also takes (all of them optional)
 - `mainFile`: the main typst file name (relative to `src`). Defaults to `main.typ`.
 - `outFormat`: the chosen output format. At the time of writing, typst supports `pdf`, `svg`, and `png`. Default to `pdf`.
 - `outputFile`: file name to output. Defaults to `mainFile` with `.typ` replaced by `.${outFormat}` (i.e. `main.pdf`).
+- `typstPackages`: an attribute set of package repositories. Defaults to `{ preview = "${typst-packages}/packages/preview"; }`
 - `extraFonts`: extra fonts typst should have access to.
 - `extraCompileFlags`: extra arguments to pass to typst compile.
-- `typstPackages`: path to a directory containing typst packages.
 - `typst`: typst package used to compile, in case you want to use a different one.
 
 The function's available at `default.nix` and also exposed via flake `lib` and `overlays.default` outputs.
@@ -75,4 +75,14 @@ Do note that by, default, you'll use this repo's locked typst-packages version.
 If that bothers you (maybe I forgor to update the lock idk), either:
 
 - Use flake inputs follows (see [example/flake.nix](example/flake.nix)); or
-- Set `mkTypstDerivation`'s `typstPackages` argument (e.g. to a `fetchTarball` call)
+- Set `mkTypstDerivation`'s `typstPackages.preview` argument (e.g. to a `fetchTarball` call), like so:
+
+```
+mkTypstDerivation {
+  name = "hi-there";
+  src = ./.;
+  typstPackages = {
+    preview = "${fetchTarball "https://github.com/typst/packages"}/packages/preview";
+  };
+}
+```

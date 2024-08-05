@@ -15,6 +15,7 @@
     nixpkgs,
     typst-nix,
     systems,
+    typst-packages,
     ...
   }: let
     forEachSystem = nixpkgs.lib.genAttrs (import systems);
@@ -28,6 +29,9 @@
         src = ./.;
         extraFonts = [pkgs.fira];
         mainFile = "main.typ";
+        typstPackages = {
+          preview = "${typst-packages}/packages/preview";
+        };
       };
     });
   };
