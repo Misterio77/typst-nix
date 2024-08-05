@@ -27,12 +27,11 @@ in
       lib.removeAttrs args ["typstPackages"]
       // {
         nativeBuildInputs = (args.nativeBuildInputs or []) ++ [typst];
-        XDG_DATA_HOME = pkgs.linkFarm "typst-packages" (mapAttrsToList (name: path:
-          lib.traceVal {
+        XDG_DATA_HOME = pkgs.linkFarm "typst-packages" (mapAttrsToList (name: path: {
             name = "typst/packages/${name}";
             inherit path;
           })
-        typstPackages);
+          typstPackages);
         TYPST_FONT_PATHS = extraFonts;
         buildPhase = ''
           runHook preBuild
